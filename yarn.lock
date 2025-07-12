@@ -10254,21 +10254,10 @@ __metadata:
     "@types/react": ^19.0.0
     react: 19.0.0
     react-native: 0.79.2
-    react-native-auth2.0-twitch: ../react-native-auth2.0-twitch-0.1.0.tgz
     react-native-builder-bob: ^0.40.8
     react-native-monorepo-config: ^0.1.9
   languageName: unknown
   linkType: soft
-
-"react-native-auth2.0-twitch@file:../react-native-auth2.0-twitch-0.1.0.tgz::locator=react-native-auth2.0-twitch-example%40workspace%3Aexample":
-  version: 0.1.0
-  resolution: "react-native-auth2.0-twitch@file:../react-native-auth2.0-twitch-0.1.0.tgz::locator=react-native-auth2.0-twitch-example%40workspace%3Aexample"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: f4c6f040ef88d5a6c4edc580523c6ac9e32f950e11d9e06ada998be71b620cb2e15d1421d481a8b677f4fd9660fb92a3227a8134397231f843fbaa353747ed4f
-  languageName: node
-  linkType: hard
 
 "react-native-auth2.0-twitch@workspace:.":
   version: 0.0.0-use.local
