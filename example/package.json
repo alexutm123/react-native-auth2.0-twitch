@@ -11,8 +11,7 @@
   },
   "dependencies": {
     "react": "19.0.0",
-    "react-native": "0.79.2",
-    "react-native-auth2.0-twitch": "../react-native-auth2.0-twitch-0.1.0.tgz"
+    "react-native": "0.79.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
