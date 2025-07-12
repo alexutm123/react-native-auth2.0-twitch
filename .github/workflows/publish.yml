@@ -21,8 +21,10 @@ jobs:
 
       - name: Install dependencies and build
         run: npm install
+        working-directory: .  
 
       - name: Publish to npm
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: .    
