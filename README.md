@@ -10,6 +10,7 @@ npm install react-native-auth2.0-twitch
 
 ## Usage
 
+Mandatory for iOS Universal Link and Android App Link
 
 ```js
 import { useTwitchAuth } from 'react-native-auth2.0-twitch';
