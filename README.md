@@ -9,6 +9,9 @@ npm install react-native-auth2.0-twitch
 ```
 
 ## Usage
+You need to create an application and get the client_id
+
+[dev.twitch](https://dev.twitch.tv/)
 
 Mandatory for [iOS Universal Link](https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content/) and [Android App Link](https://developer.android.com/training/app-links?hl=en) for redirect 
 
