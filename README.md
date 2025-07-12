@@ -10,7 +10,7 @@ npm install react-native-auth2.0-twitch
 
 ## Usage
 
-Mandatory for iOS Universal Link and Android App Link
+Mandatory for [iOS Universal Link](https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content/) and [Android App Link](https://developer.android.com/training/app-links?hl=en) for redirect 
 
 ```js
 import { useTwitchAuth } from 'react-native-auth2.0-twitch';
@@ -26,6 +26,14 @@ const { startAuth, error } = useTwitchAuth({
     }
   });
 ```
+
+The result should be a code - which you can change to [access_token](https://dev.twitch.tv/docs/authentication/getting-tokens-oauth/#authorization-code-grant-flow) and use it to get the user data.
+
+
+## Twitch OAuth Documentation
+
+[Authentication](https://dev.twitch.tv/docs/authentication/)
+
 ## License
 
 MIT
