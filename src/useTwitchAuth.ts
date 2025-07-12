@@ -1,6 +1,6 @@
 // useTwitchAuth.ts
 import { useEffect, useState, useCallback, useRef } from 'react';
-import { Linking } from 'react-native';
+import { Linking, Platform } from 'react-native';
 import Auth20Twitch from './NativeAuth20Twitch';
 
 interface AuthOptions {
@@ -81,10 +81,17 @@ export function useTwitchAuth({
       `&state=${encodeURIComponent(state)}`;
 
     try {
-      const opened = await Auth20Twitch.open(url);
-      if (!opened) {
-        throw new Error('Could not open auth window');
+      if(Platform.OS === 'android') {
+        const opened = await Auth20Twitch.open(url);
+        if (!opened) {
+          throw new Error('Could not open auth window');
+        }
+      } else {
+        const supported = await Linking.canOpenURL(url);
+        if (!supported) throw new Error('Cannot open auth URL');
+        await Linking.openURL(url);
       }
+  
     } catch (err: any) {
       setError(err.message || 'Unknown error');
       onError?.(err);

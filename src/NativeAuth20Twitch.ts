@@ -3,11 +3,10 @@ import { TurboModuleRegistry } from 'react-native';
 
 export interface Spec extends TurboModule {
   /**
-   * Открыть URL во внутреннем браузере (Custom Tabs / SFSafariViewController)
-   * Возвращает Promise<boolean> — true при успешном открытии
+   * Opens the given URL in the internal browser (Custom Tabs / SFSafariViewController)
+   * Returns a Promise<boolean> with true if the URL was opened successfully
    */
   open(url: string): Promise<boolean>;
 }
 
-// Получаем нативный модуль с нужным интерфейсом
 export default TurboModuleRegistry.getEnforcing<Spec>('Auth20Twitch');
