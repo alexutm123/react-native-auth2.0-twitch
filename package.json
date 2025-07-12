@@ -1,7 +1,7 @@
 {
   "name": "react-native-auth2.0-twitch",
   "version": "0.1.0",
-  "description": "auth 2.0 twitch",
+  "description": "A lightweight React Native library for integrating Twitch OAuth 2.0 authentication using Android Custom Tabs. It allows you to securely authenticate users with Twitch by launching an external browser window (Custom Tabs) and handling the OAuth flow without exposing client secrets.",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
   "exports": {
