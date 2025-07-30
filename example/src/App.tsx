@@ -3,8 +3,8 @@ import { useTwitchAuth } from 'react-native-auth2.0-twitch';
 
 export default function App() {
   const { startAuth, error } = useTwitchAuth({
-    clientId: 'cn6ekc2chjlpwutynsojhkfa89hjil',
-    redirectUri: 'https://redirect-bloop.vercel.app',
+    clientId: 'test-client-id',
+    redirectUri: 'test-redirect-uri',
     onSuccess: (code) => {
       console.log('Код авторизации:', code);
     },
