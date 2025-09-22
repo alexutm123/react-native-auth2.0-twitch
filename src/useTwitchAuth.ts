@@ -9,6 +9,7 @@ interface AuthOptions {
   scopes?: string[];
   onSuccess?: (code: string) => void;
   onError?: (error: Error) => void;
+  forceVerify?: boolean;
 }
 
 export function useTwitchAuth({
@@ -17,6 +18,7 @@ export function useTwitchAuth({
   scopes = ['user:read:email'],
   onSuccess,
   onError,
+  forceVerify = false,
 }: AuthOptions) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -78,7 +80,8 @@ export function useTwitchAuth({
       `&redirect_uri=${encodeURIComponent(redirectUri)}` +
       `&response_type=code` +
       `&scope=${encodeURIComponent(scopes.join(' '))}` +
-      `&state=${encodeURIComponent(state)}`;
+      `&state=${encodeURIComponent(state)}` +
+      (forceVerify ? `&force_verify=true` : '');
 
     try {
       if(Platform.OS === 'android') {
@@ -98,7 +101,7 @@ export function useTwitchAuth({
     } finally {
       setLoading(false);
     }
-  }, [clientId, redirectUri, scopes]);
+  }, [clientId, redirectUri, scopes, forceVerify]);
 
   return { startAuth, loading, error };
 }

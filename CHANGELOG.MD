@@ -1,3 +1,11 @@
+## [1.2.3] - 2025-09-22
+
+### Added
+
+- feat: support force_verify (optional) to always show Twitch login/consent
+
+--------
+
 ## [1.1.3] - 2025-07-16
 
 ### Added

@@ -21,6 +21,9 @@ import { useTwitchAuth } from 'react-native-auth2.0-twitch';
 const { startAuth, error } = useTwitchAuth({
     clientId: 'You client_id',
     redirectUri: 'You redirect_uri',
+    // Optional: force the Twitch consent/login screen even if the user already authorized your app
+    // Maps to the Twitch "force_verify" parameter. Default is false.
+    forceVerify: false,
     onSuccess: (code) => {
       console.log('Code auth:', code);
     },
@@ -32,6 +35,16 @@ const { startAuth, error } = useTwitchAuth({
 
 The result should be a code - which you can change to [access_token](https://dev.twitch.tv/docs/authentication/getting-tokens-oauth/#authorization-code-grant-flow) and use it to get the user data.
 
+### force_verify (optional)
+- What: When enabled, Twitch will always show the login/consent screen, even if the user already authorized your app before (equivalent to Twitch’s force_verify parameter).
+- Why: Useful to ensure a fresh login, prompt the user to re-consent, or let them switch accounts explicitly.
+- How: Set forceVerify: true in the hook options:
+```js
+useTwitchAuth({
+  // ...existing options...
+  forceVerify: true,
+});
+```
 
 ## Twitch OAuth Documentation
 
